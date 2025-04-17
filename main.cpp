@@ -1,3 +1,20 @@
+/*
+solve an olympiad-style problem with the tree
+input format:
+m
+string_1
+string_2
+...
+string_m
+q
+query_1
+query_2
+...
+query_m
+
+for each query, print 1 or 0 depending on whether this query is a node in the resulting tree
+*/
+
 #include <iostream>
 #include <iomanip>
 

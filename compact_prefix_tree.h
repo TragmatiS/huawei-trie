@@ -1,5 +1,9 @@
 #pragma once
 
+/*
+A compact (compressed) prefix tree
+*/
+
 #include <iterator>
 #include <vector>
 #include <algorithm>
@@ -20,6 +24,11 @@ struct node {
 	vector<edge> children;
 };
 
+/*
+There is no distinction between terminal and non-terminal nodes!
+Therefore, in order to use this tree as a dictionary, one has to insert special characters at the end of each string
+(say, '#' or something).
+*/
 class compact_prefix_tree {
 private:
 	vector<node> node_stash; //node_stash[0] is the root
@@ -33,7 +42,15 @@ private:
 	void add_record(string_view what);
 
 public:
+	/*
+	Build the tree using a dictionary
+	*/
 	compact_prefix_tree(const vector<string>& dictionary);
+
+	/*
+	Check if a given query string is a node in the tree.
+	There is no distinction between terminal and non-terminal nodes!
+	*/
 	bool exists(string_view query) const;
 };
 
