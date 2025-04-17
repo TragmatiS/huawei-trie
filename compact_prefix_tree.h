@@ -6,6 +6,8 @@
 #include <string>
 #include <string_view>
 
+using namespace std;
+
 struct edge {
 	int destination;
 
@@ -126,7 +128,7 @@ compact_prefix_tree::compact_prefix_tree(
 		add_record(record);
 	}
 }
-	
+
 //check if query terminates at some node
 bool compact_prefix_tree::exists(string_view query) const {
 	int current_node_index = 0;
